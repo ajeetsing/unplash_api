@@ -1,38 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+body {
+  padding:20px;
+  margin: 20px;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.search {
+  margin-left: 50px;
+  height: 100px;
+ align-items: center;
+ margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  display: block;
+  padding: 15px;
+  font-size: 25px;
+  border: 2px solid;
+  border-radius: 1rem;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+input:focus {
+  outline-style: initial;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  grid-row-gap: 1rem;
+}
+.card {
+  cursor: pointer;
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;
+  overflow: hidden;
+}
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
   }
+  .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }
+}
+.title img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+ul li {
+  list-style-type: none;
 }
