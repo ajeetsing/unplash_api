@@ -5,7 +5,7 @@ function Example({ item, show, handleClose, indexValue }) {
   return (
     <>
       {show && (
-        <>
+        <div className="model" >
           <Modal show={show} onHide={handleClose} animation={false}>
             <Modal.Header closeButton>
               <Modal.Title className="title">
@@ -23,7 +23,7 @@ function Example({ item, show, handleClose, indexValue }) {
               <li>
                 <b>User name </b> : {data.user.username}
               </li>
-              <li>
+              <ul>
                 <b>user's social links : </b>
                 <li>
                   {" "}
@@ -34,7 +34,7 @@ function Example({ item, show, handleClose, indexValue }) {
                   <b>portfolio : </b>
                   {data.user.links.portfolio}
                 </li>
-              </li>
+              </ul>
             </ul>
 
             <Modal.Footer>
@@ -43,8 +43,9 @@ function Example({ item, show, handleClose, indexValue }) {
               </Button>
             </Modal.Footer>
           </Modal>
-        </>
-      )}
+        </div>
+      )
+      }
     </>
   );
 }
